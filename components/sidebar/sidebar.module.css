@@ -1,0 +1,13 @@
+.sidebar {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  color: white;
+  position: absolute !important;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
