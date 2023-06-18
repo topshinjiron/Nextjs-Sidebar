@@ -6,12 +6,17 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 
-export const SideBar = (props) => {
+export const SideBar = () => {
 
   const [collapsed, setCollapsed] = useState(false);
+  const [type, setType] = useState(false);
 
   const handleToggleClick = () => {
     setCollapsed(!collapsed);
+  };
+
+  const handleToggleType = () => {
+    setType(!type);
   };
 
   return (
@@ -40,10 +45,11 @@ export const SideBar = (props) => {
             />
           ) : (
             <>
-              {props.type == 'common' &&
+              {type == false &&
                 <>
                   <MenuItem
                     icon={<AssessmentIcon />}
+                    onClick={handleToggleType}
                   >
                     <h2 className={styles.header}>
                       日報業務
@@ -117,10 +123,11 @@ export const SideBar = (props) => {
                   </SubMenu>
                 </>}
 
-              {props.type == 'delivery' &&
+              {type == true &&
                 <>
                   <MenuItem
                     icon={<LocalShippingIcon />}
+                    onClick={handleToggleType}
                   >
                     <h2 className={styles.header}>
                       配車業務
